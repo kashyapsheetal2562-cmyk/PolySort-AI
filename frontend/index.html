@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PolySort AI | Intelligent Plastic Sorting</title>
+
+    <meta
+        name="description"
+        content="PolySort AI identifies plastic waste, analyzes material type, evaluates confidence and recommends the appropriate recycling pathway."
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         APPLICATION
+    ====================================================== -->
+
+    <div class="app">
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ♻
+                </div>
+
+                <div class="brand-text">
+                    <h1>PolySort</h1>
+                    <span>AI</span>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-label">
+                MAIN MENU
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <button
+                    class="nav-item active"
+                    data-section="dashboard"
+                >
+                    <span class="nav-icon">▦</span>
+                    <span>Dashboard</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="analyze"
+                >
+                    <span class="nav-icon">⌕</span>
+                    <span>Analyze Waste</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="sorting"
+                >
+                    <span class="nav-icon">⇄</span>
+                    <span>Sorting Center</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="materials"
+                >
+                    <span class="nav-icon">◈</span>
+                    <span>Materials</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="analytics"
+                >
+                    <span class="nav-icon">▥</span>
+                    <span>Analytics</span>
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-label">
+                SYSTEM
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <button
+                    class="nav-item"
+                    data-section="how-it-works"
+                >
+                    <span class="nav-icon">?</span>
+                    <span>How It Works</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="settings"
+                >
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="ai-status-card">
+
+                    <div class="status-dot"></div>
+
+                    <div>
+
+                        <strong>
+                            AI System
+                        </strong>
+
+                        <small id="aiStatus">
+                            Backend Online
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================== -->
+
+        <main class="main-content">
+
+            <!-- =================================================
+                 TOP HEADER
+            ================================================== -->
+
+            <header class="topbar">
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Open menu"
+                >
+                    ☰
+                </button>
+
+
+                <div class="page-heading">
+
+                    <span class="eyebrow">
+                        INTELLIGENT WASTE MANAGEMENT
+                    </span>
+
+                    <h2 id="pageTitle">
+                        Plastic Intelligence Dashboard
+                    </h2>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <div class="system-pill">
+
+                        <span class="live-dot"></span>
+
+                        <span>
+                            AI Online
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="icon-btn"
+                        id="refreshBtn"
+                        title="Refresh"
+                    >
+                        ↻
+                    </button>
+
+
+                    <div class="profile">
+
+                        <div class="profile-avatar">
+                            PS
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong>
+                                PolySort
+                            </strong>
+
+                            <span>
+                                AI Operator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+
+            <div class="content">
+
+
+                <!-- =================================================
+                     DASHBOARD
+                ================================================== -->
+
+                <section
+                    class="page-section active"
+                    id="dashboard"
+                >
+
+                    <!-- HERO -->
+
+                    <div class="hero-card">
+
+                        <div class="hero-content">
+
+                            <div class="hero-badge">
+
+                                <span>✦</span>
+
+                                COMPUTER VISION + AI
+
+                            </div>
+
+
+                            <h3>
+
+                                Turn plastic waste into
+
+                                <span>
+                                    intelligent decisions.
+                                </span>
+
+                            </h3>
+
+
+                            <p>
+
+                                Upload a plastic waste image and let
+                                PolySort AI identify the material,
+                                measure prediction confidence and
+                                recommend the right sorting pathway.
+
+                            </p>
+
+
+                            <div class="hero-actions">
+
+                                <button
+                                    class="primary-btn"
+                                    id="startAnalysisBtn"
+                                >
+
+                                    <span>📷</span>
+
+                                    Analyze Plastic
+
+                                </button>
+
+
+                                <button
+                                    class="secondary-btn"
+                                    id="cameraBtn"
+                                >
+
+                                    <span>◉</span>
+
+                                    Live Camera
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hero-visual">
+
+                            <div class="scan-circle">
+
+                                <div class="scan-ring ring-one"></div>
+
+                                <div class="scan-ring ring-two"></div>
+
+                                <div class="scan-object">
+                                    ♻
+                                </div>
+
+                                <div class="scan-line"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STAT CARDS -->
+
+                    <div class="stats-grid">
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+                                🧴
+                            </div>
+
+                            <div class="stat-content">
+
+                                <span>
+                                    Total Analyzed
+                                </span>
+
+                                <strong id="totalAnalyzed">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Waste objects
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+                                🎯
+                            </div>
+
+                            <div class="stat-content">
+
+                                <span>
+                                    AI Confidence
+                                </span>
+
+                                <strong id="averageConfidence">
+                                    0%
+                                </strong>
+
+                                <small>
+                                    Average prediction
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+                                ♻
+                            </div>
+
+                            <div class="stat-content">
+
+                                <span>
+                                    Auto Sortable
+                                </span>
+
+                                <strong id="autoSortable">
+                                    0%
+                                </strong>
+
+                                <small>
+                                    High confidence
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+                                ⚠
+                            </div>
+
+                            <div class="stat-content">
+
+                                <span>
+                                    Human Review
+                                </span>
+
+                                <strong id="humanReview">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Requires verification
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK ANALYSIS -->
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                QUICK ACTION
+                            </span>
+
+                            <h3>
+                                Analyze a plastic sample
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="upload-card"
+                        id="dashboardUploadCard"
+                    >
+
+                        <input
+                            type="file"
+                            id="dashboardFileInput"
+                            accept="image/png,image/jpeg,image/webp"
+                            hidden
+                        >
+
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+
+                        <h4>
+                            Drop your plastic image here
+                        </h4>
+
+
+                        <p>
+                            or click to browse from your device
+                        </p>
+
+
+                        <button
+                            class="upload-btn"
+                            id="dashboardUploadBtn"
+                            type="button"
+                        >
+                            Choose Image
+                        </button>
+
+
+                        <span class="upload-note">
+                            JPG, PNG or WEBP • Max 10MB
+                        </span>
+
+                    </div>
+
+
+                    <!-- RECENT ACTIVITY -->
+
+                    <div class="section-header activity-heading">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                SYSTEM ACTIVITY
+                            </span>
+
+                            <h3>
+                                Recent analysis
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            class="text-btn"
+                            id="viewAllBtn"
+                            type="button"
+                        >
+                            View all →
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="activity-list"
+                        id="activityList"
+                    >
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                ◌
+                            </div>
+
+                            <h4>
+                                No analysis yet
+                            </h4>
+
+                            <p>
+                                Upload a plastic image to start
+                                your first AI analysis.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     ANALYZE
+                ================================================== -->
+
+                <section
+                    class="page-section"
+                    id="analyze"
+                >
+
+                    <div class="section-page-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                COMPUTER VISION
+                            </span>
+
+                            <h3>
+                                Analyze Plastic Waste
+                            </h3>
+
+                            <p>
+                                Upload an image and let AI identify
+                                the plastic material.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="analysis-layout">
+
+
+                        <!-- UPLOAD -->
+
+                        <div class="analysis-upload-panel">
+
+                            <input
+                                type="file"
+                                id="analysisFileInput"
+                                accept="image/png,image/jpeg,image/webp"
+                                hidden
+                            >
+
+
+                            <div
+                                class="large-upload-card"
+                                id="largeUploadCard"
+                            >
+
+                                <div class="large-upload-icon">
+                                    📷
+                                </div>
+
+                                <h4>
+                                    Upload plastic waste
+                                </h4>
+
+                                <p>
+                                    Drag & drop your image here
+                                    or browse your device.
+                                </p>
+
+
+                                <button
+                                    class="primary-btn"
+                                    id="analysisUploadBtn"
+                                    type="button"
+                                >
+                                    Choose Image
+                                </button>
+
+
+                                <div class="upload-formats">
+                                    JPG • PNG • WEBP
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RESULT -->
+
+                        <div class="result-panel">
+
+                            <div class="result-placeholder">
+
+                                <div class="result-placeholder-icon">
+                                    ✦
+                                </div>
+
+                                <h4>
+                                    AI Result
+                                </h4>
+
+                                <p>
+                                    Your plastic identification
+                                    result will appear here.
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                class="result-content"
+                                id="resultContent"
+                                hidden
+                            >
+
+                                <div class="result-image-container">
+
+                                    <img
+                                        id="resultImage"
+                                        src=""
+                                        alt="Analyzed plastic"
+                                    >
+
+                                    <div class="image-tag">
+                                        AI ANALYZED
+                                    </div>
+
+                                </div>
+
+
+                                <div class="result-material">
+
+                                    <div>
+
+                                        <span class="result-label">
+                                            DETECTED MATERIAL
+                                        </span>
+
+                                        <h4 id="resultMaterial">
+                                            —
+                                        </h4>
+
+                                    </div>
+
+
+                                    <div
+                                        class="confidence-badge"
+                                        id="confidenceBadge"
+                                    >
+                                        —
+                                    </div>
+
+                                </div>
+
+
+                                <div class="confidence-section">
+
+                                    <div class="confidence-header">
+
+                                        <span>
+                                            AI Confidence
+                                        </span>
+
+                                        <strong id="confidenceValue">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="confidence-bar">
+
+                                        <div
+                                            class="confidence-fill"
+                                            id="confidenceFill"
+                                            style="width: 0%;"
+                                        ></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="decision-card">
+
+                                    <div class="decision-icon">
+                                        ✓
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            SORTING DECISION
+                                        </span>
+
+                                        <strong id="decisionAction">
+                                            —
+                                        </strong>
+
+                                        <p id="decisionText">
+                                            Waiting for analysis.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MATERIAL INFORMATION -->
+
+                    <div
+                        class="material-info-grid"
+                        id="materialInfoGrid"
+                    >
+
+                        <div class="info-card">
+
+                            <span>
+                                POLYMER
+                            </span>
+
+                            <strong id="polymerName">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span>
+                                RESIN CODE
+                            </span>
+
+                            <strong id="resinCode">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span>
+                                FAMILY
+                            </span>
+
+                            <strong id="plasticFamily">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span>
+                                RECYCLING
+                            </span>
+
+                            <strong id="recyclingRecommendation">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SORTING CENTER
+                ================================================== -->
+
+                <section
+                    class="page-section"
+                    id="sorting"
+                >
+
+                    <div class="section-page-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                AUTOMATED SORTING
+                            </span>
+
+                            <h3>
+                                Smart Sorting Center
+                            </h3>
+
+                            <p>
+                                Simulate how AI decisions move
+                                plastic waste into the right stream.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-btn"
+                            id="runSortingBtn"
+                            type="button"
+                        >
+                            ▶ Run Simulation
+                        </button>
+
+                    </div>
+
+
+                    <div class="sorting-machine">
+
+
+                        <div class="machine-header">
+
+                            <div class="machine-camera">
+
+                                <span class="camera-light"></span>
+
+                                AI VISION CAMERA
+
+                            </div>
+
+
+                            <span class="machine-status">
+                                SYSTEM READY
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="conveyor"
+                            id="conveyor"
+                        >
+
+                            <div class="conveyor-item pet-item">
+
+                                🧴
+
+                                <span>
+                                    PET
+                                </span>
+
+                            </div>
+
+
+                            <div class="conveyor-item hdpe-item">
+
+                                🧪
+
+                                <span>
+                                    HDPE
+                                </span>
+
+                            </div>
+
+
+                            <div class="conveyor-item pp-item">
+
+                                🥤
+
+                                <span>
+                                    PP
+                                </span>
+
+                            </div>
+
+
+                            <div class="conveyor-item pvc-item">
+
+                                📦
+
+                                <span>
+                                    PVC
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="sorting-bins">
+
+
+                            <div class="sorting-bin">
+
+                                <div class="bin-number">
+                                    01
+                                </div>
+
+                                <div class="bin-icon">
+                                    ♻
+                                </div>
+
+                                <strong>
+                                    PET
+                                </strong>
+
+                                <span>
+                                    Resin #1
+                                </span>
+
+                            </div>
+
+
+                            <div class="sorting-bin">
+
+                                <div class="bin-number">
+                                    02
+                                </div>
+
+                                <div class="bin-icon">
+                                    ♻
+                                </div>
+
+                                <strong>
+                                    HDPE
+                                </strong>
+
+                                <span>
+                                    Resin #2
+                                </span>
+
+                            </div>
+
+
+                            <div class="sorting-bin">
+
+                                <div class="bin-number">
+                                    03
+                                </div>
+
+                                <div class="bin-icon">
+                                    ♻
+                                </div>
+
+                                <strong>
+                                    PP
+                                </strong>
+
+                                <span>
+                                    Resin #5
+                                </span>
+
+                            </div>
+
+
+                            <div class="sorting-bin">
+
+                                <div class="bin-number">
+                                    04
+                                </div>
+
+                                <div class="bin-icon">
+                                    ?
+                                </div>
+
+                                <strong>
+                                    REVIEW
+                                </strong>
+
+                                <span>
+                                    Manual Check
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="sorting-summary">
+
+                        <div>
+
+                            <span>
+                                OBJECTS PROCESSED
+                            </span>
+
+                            <strong id="objectsProcessed">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                AUTO SORTED
+                            </span>
+
+                            <strong id="objectsSorted">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                MANUAL REVIEW
+                            </span>
+
+                            <strong id="objectsReview">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     MATERIALS
+                ================================================== -->
+
+                <section
+                    class="page-section"
+                    id="materials"
+                >
+
+                    <div class="section-page-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                MATERIAL KNOWLEDGE BASE
+                            </span>
+
+                            <h3>
+                                Plastic Materials
+                            </h3>
+
+                            <p>
+                                Explore the polymer information used
+                                by PolySort AI.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="materials-grid"
+                        id="materialsGrid"
+                    >
+
+
+                        <div class="material-card">
+
+                            <div class="material-card-top">
+
+                                <div class="resin-badge">
+                                    1
+                                </div>
+
+                                <span class="material-type">
+                                    THERMOPLASTIC
+                                </span>
+
+                            </div>
+
+
+                            <h4>
+                                PET
+                            </h4>
+
+                            <p>
+                                Polyethylene Terephthalate
+                            </p>
+
+
+                            <div class="material-use">
+                                Common in beverage bottles
+                                and food packaging.
+                            </div>
+
+                        </div>
+
+
+                        <div class="material-card">
+
+                            <div class="material-card-top">
+
+                                <div class="resin-badge">
+                                    2
+                                </div>
+
+                                <span class="material-type">
+                                    THERMOPLASTIC
+                                </span>
+
+                            </div>
+
+
+                            <h4>
+                                HDPE
+                            </h4>
+
+                            <p>
+                                High-Density Polyethylene
+                            </p>
+
+
+                            <div class="material-use">
+                                Common in containers,
+                                bottles and household products.
+                            </div>
+
+                        </div>
+
+
+                        <div class="material-card">
+
+                            <div class="material-card-top">
+
+                                <div class="resin-badge">
+                                    3
+                                </div>
+
+                                <span class="material-type">
+                                    THERMOPLASTIC
+                                </span>
+
+                            </div>
+
+
+                            <h4>
+                                PVC
+                            </h4>
+
+                            <p>
+                                Polyvinyl Chloride
+                            </p>
+
+
+                            <div class="material-use">
+                                Common in pipes, profiles
+                                and construction products.
+                            </div>
+
+                        </div>
+
+
+                        <div class="material-card">
+
+                            <div class="material-card-top">
+
+                                <div class="resin-badge">
+                                    4
+                                </div>
+
+                                <span class="material-type">
+                                    THERMOPLASTIC
+                                </span>
+
+                            </div>
+
+
+                            <h4>
+                                LDPE
+                            </h4>
+
+                            <p>
+                                Low-Density Polyethylene
+                            </p>
+
+
+                            <div class="material-use">
+                                Common in films, bags
+                                and flexible packaging.
+                            </div>
+
+                        </div>
+
+
+                        <div class="material-card">
+
+                            <div class="material-card-top">
+
+                                <div class="resin-badge">
+                                    5
+                                </div>
+
+                                <span class="material-type">
+                                    THERMOPLASTIC
+                                </span>
+
+                            </div>
+
+
+                            <h4>
+                                PP
+                            </h4>
+
+                            <p>
+                                Polypropylene
+                            </p>
+
+
+                            <div class="material-use">
+                                Common in food containers,
+                                caps and automotive parts.
+                            </div>
+
+                        </div>
+
+
+                        <div class="material-card">
+
+                            <div class="material-card-top">
+
+                                <div class="resin-badge">
+                                    6
+                                </div>
+
+                                <span class="material-type">
+                                    THERMOPLASTIC
+                                </span>
+
+                            </div>
+
+
+                            <h4>
+                                PS
+                            </h4>
+
+                            <p>
+                                Polystyrene
+                            </p>
+
+
+                            <div class="material-use">
+                                Used in packaging, insulation
+                                and disposable products.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     ANALYTICS
+                ================================================== -->
+
+                <section
+                    class="page-section"
+                    id="analytics"
+                >
+
+                    <div class="section-page-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                PERFORMANCE
+                            </span>
+
+                            <h3>
+                                Sorting Analytics
+                            </h3>
+
+                            <p>
+                                Monitor identification and sorting
+                                performance.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="analytics-grid">
+
+
+                        <div class="analytics-card large">
+
+                            <div class="analytics-card-header">
+
+                                <div>
+
+                                    <span>
+                                        MATERIAL DISTRIBUTION
+                                    </span>
+
+                                    <h4>
+                                        Detected Plastic Types
+                                    </h4>
+
+                                </div>
+
+
+                                <span class="chart-period">
+                                    DEMO DATA
+                                </span>
+
+                            </div>
+
+
+                            <div class="bar-chart">
+
+
+                                <div class="chart-row">
+
+                                    <span>
+                                        PET
+                                    </span>
+
+                                    <div class="bar">
+
+                                        <div
+                                            class="bar-fill"
+                                            style="width: 82%;"
+                                        ></div>
+
+                                    </div>
+
+                                    <strong>
+                                        82%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="chart-row">
+
+                                    <span>
+                                        HDPE
+                                    </span>
+
+                                    <div class="bar">
+
+                                        <div
+                                            class="bar-fill"
+                                            style="width: 61%;"
+                                        ></div>
+
+                                    </div>
+
+                                    <strong>
+                                        61%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="chart-row">
+
+                                    <span>
+                                        PP
+                                    </span>
+
+                                    <div class="bar">
+
+                                        <div
+                                            class="bar-fill"
+                                            style="width: 48%;"
+                                        ></div>
+
+                                    </div>
+
+                                    <strong>
+                                        48%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="chart-row">
+
+                                    <span>
+                                        LDPE
+                                    </span>
+
+                                    <div class="bar">
+
+                                        <div
+                                            class="bar-fill"
+                                            style="width: 34%;"
+                                        ></div>
+
+                                    </div>
+
+                                    <strong>
+                                        34%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="chart-row">
+
+                                    <span>
+                                        PVC
+                                    </span>
+
+                                    <div class="bar">
+
+                                        <div
+                                            class="bar-fill"
+                                            style="width: 23%;"
+                                        ></div>
+
+                                    </div>
+
+                                    <strong>
+                                        23%
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="analytics-card">
+
+                            <span>
+                                SORTING EFFICIENCY
+                            </span>
+
+
+                            <div class="efficiency-circle">
+
+                                <div>
+
+                                    <strong>
+                                        88%
+                                    </strong>
+
+                                    <span>
+                                        Efficient
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <p>
+                                Objects with sufficient confidence
+                                for automated sorting.
+                            </p>
+
+                        </div>
+
+
+                        <div class="analytics-card">
+
+                            <span>
+                                HUMAN VERIFICATION
+                            </span>
+
+
+                            <div class="big-number">
+                                12%
+                            </div>
+
+
+                            <p>
+                                Samples requiring additional
+                                verification.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     HOW IT WORKS
+                ================================================== -->
+
+                <section
+                    class="page-section"
+                    id="how-it-works"
+                >
+
+                    <div class="section-page-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                POLYSORT AI PIPELINE
+                            </span>
+
+                            <h3>
+                                How It Works
+                            </h3>
+
+                            <p>
+                                From image capture to intelligent
+                                recycling guidance.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline">
+
+
+                        <div class="pipeline-step">
+
+                            <div class="pipeline-number">
+                                01
+                            </div>
+
+                            <div class="pipeline-icon">
+                                📷
+                            </div>
+
+                            <h4>
+                                Capture
+                            </h4>
+
+                            <p>
+                                User uploads a plastic image or
+                                provides a camera frame.
+                            </p>
+
+                        </div>
+
+
+                        <div class="pipeline-arrow">
+                            →
+                        </div>
+
+
+                        <div class="pipeline-step">
+
+                            <div class="pipeline-number">
+                                02
+                            </div>
+
+                            <div class="pipeline-icon">
+                                ◉
+                            </div>
+
+                            <h4>
+                                Detect
+                            </h4>
+
+                            <p>
+                                Computer vision detects plastic
+                                objects and identifies their type.
+                            </p>
+
+                        </div>
+
+
+                        <div class="pipeline-arrow">
+                            →
+                        </div>
+
+
+                        <div class="pipeline-step">
+
+                            <div class="pipeline-number">
+                                03
+                            </div>
+
+                            <div class="pipeline-icon">
+                                🎯
+                            </div>
+
+                            <h4>
+                                Evaluate
+                            </h4>
+
+                            <p>
+                                The confidence engine decides whether
+                                the result is reliable.
+                            </p>
+
+                        </div>
+
+
+                        <div class="pipeline-arrow">
+                            →
+                        </div>
+
+
+                        <div class="pipeline-step">
+
+                            <div class="pipeline-number">
+                                04
+                            </div>
+
+                            <div class="pipeline-icon">
+                                ♻
+                            </div>
+
+                            <h4>
+                                Recommend
+                            </h4>
+
+                            <p>
+                                Material knowledge is used to provide
+                                sorting and recycling guidance.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="architecture-card">
+
+
+                        <div class="architecture-header">
+
+                            <span>
+                                SYSTEM ARCHITECTURE
+                            </span>
+
+                            <h4>
+                                AI-powered decision pipeline
+                            </h4>
+
+                        </div>
+
+
+                        <div class="architecture-flow">
+
+
+                            <div class="architecture-node">
+
+                                📷
+
+                                <span>
+                                    Image
+                                </span>
+
+                            </div>
+
+
+                            <div class="flow-line"></div>
+
+
+                            <div class="architecture-node">
+
+                                ◉
+
+                                <span>
+                                    YOLO AI
+                                </span>
+
+                            </div>
+
+
+                            <div class="flow-line"></div>
+
+
+                            <div class="architecture-node">
+
+                                🎯
+
+                                <span>
+                                    Confidence
+                                </span>
+
+                            </div>
+
+
+                            <div class="flow-line"></div>
+
+
+                            <div class="architecture-node">
+
+                                🧠
+
+                                <span>
+                                    Knowledge
+                                </span>
+
+                            </div>
+
+
+                            <div class="flow-line"></div>
+
+
+                            <div class="architecture-node">
+
+                                ♻
+
+                                <span>
+                                    Sorting
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SETTINGS
+                ================================================== -->
+
+                <section
+                    class="page-section"
+                    id="settings"
+                >
+
+                    <div class="section-page-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                SYSTEM CONFIGURATION
+                            </span>
+
+                            <h3>
+                                Settings
+                            </h3>
+
+                            <p>
+                                Configure PolySort AI preferences.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-card">
+
+
+                        <div class="setting-row">
+
+                            <div>
+
+                                <strong>
+                                    AI Confidence Threshold
+                                </strong>
+
+                                <span>
+                                    Minimum confidence required
+                                    for automatic sorting.
+                                </span>
+
+                            </div>
+
+
+                            <div class="threshold-value">
+                                80%
+                            </div>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div>
+
+                                <strong>
+                                    Human Verification
+                                </strong>
+
+                                <span>
+                                    Review medium-confidence
+                                    predictions.
+                                </span>
+
+                            </div>
+
+
+                            <div class="toggle active">
+
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div>
+
+                                <strong>
+                                    Unknown Material Protection
+                                </strong>
+
+                                <span>
+                                    Send low-confidence samples
+                                    for additional verification.
+                                </span>
+
+                            </div>
+
+
+                            <div class="toggle active">
+
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="footer">
+
+                <div>
+
+                    <strong>
+                        PolySort AI
+                    </strong>
+
+                    <span>
+                        Intelligent plastic identification &
+                        waste sorting.
+                    </span>
+
+                </div>
+
+
+                <div>
+                    Prototype • Hackathon Edition
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         FULL RESULT PAGE
+    ====================================================== -->
+
+    <div
+        class="analysis-result-page"
+        id="analysisResultPage"
+        hidden
+    >
+
+        <div class="result-page-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    POLYSORT AI • ANALYSIS COMPLETE
+                </span>
+
+                <h1>
+                    Plastic Analysis Result
+                </h1>
+
+                <p>
+                    AI-powered identification and intelligent
+                    recycling recommendation.
+                </p>
+
+            </div>
+
+
+            <button
+                class="secondary-btn"
+                id="backToDashboardBtn"
+                type="button"
+            >
+                ← Back to Dashboard
+            </button>
+
+        </div>
+
+
+        <div class="result-page-grid">
+
+
+            <!-- IMAGE -->
+
+            <div class="final-image-card">
+
+                <div class="final-image-header">
+
+                    <span>
+                        ANALYZED SAMPLE
+                    </span>
+
+                    <span class="final-status">
+                        ✓ AI ANALYZED
+                    </span>
+
+                </div>
+
+
+                <div class="final-image-wrapper">
+
+                    <img
+                        id="finalResultImage"
+                        src=""
+                        alt="Analyzed plastic sample"
+                    >
+
+                </div>
+
+
+                <div class="sample-name">
+                    Plastic Waste Sample
+                </div>
+
+            </div>
+
+
+            <!-- MAIN RESULT -->
+
+            <div class="final-result-card">
+
+                <span class="result-label">
+                    DETECTED MATERIAL
+                </span>
+
+
+                <div class="material-result-header">
+
+                    <div>
+
+                        <h2 id="finalMaterial">
+                            —
+                        </h2>
+
+                        <p id="finalPolymer">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="final-confidence"
+                        id="finalConfidence"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="final-confidence-section">
+
+                    <div class="final-confidence-heading">
+
+                        <span>
+                            AI CONFIDENCE
+                        </span>
+
+                        <strong id="finalConfidenceText">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="final-confidence-bar">
+
+                        <div
+                            id="finalConfidenceFill"
+                            style="width: 0%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="final-decision">
+
+                    <div class="final-decision-icon">
+                        ✓
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            SORTING DECISION
+                        </span>
+
+                        <strong id="finalDecision">
+                            —
+                        </strong>
+
+                        <p id="finalDecisionText">
+                            —
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MATERIAL DETAILS -->
+
+        <div class="final-details-grid">
+
+
+            <div class="final-detail-card">
+
+                <span>
+                    POLYMER
+                </span>
+
+                <strong id="finalPolymerName">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="final-detail-card">
+
+                <span>
+                    RESIN CODE
+                </span>
+
+                <strong id="finalResinCode">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="final-detail-card">
+
+                <span>
+                    PLASTIC FAMILY
+                </span>
+
+                <strong id="finalPlasticFamily">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="final-detail-card">
+
+                <span>
+                    RECYCLING
+                </span>
+
+                <strong id="finalRecycling">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULT FOOTER -->
+
+        <div class="result-page-footer">
+
+            <div>
+
+                <span class="success-dot"></span>
+
+                <strong>
+                    Analysis completed successfully
+                </strong>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                id="analyzeAnotherBtn"
+                type="button"
+            >
+                Analyze Another Image
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOADING OVERLAY
+    ====================================================== -->
+
+    <div
+        class="loading-overlay"
+        id="loadingOverlay"
+        hidden
+    >
+
+        <div class="loading-card">
+
+            <div class="loading-spinner"></div>
+
+            <h3>
+                AI is analyzing...
+            </h3>
+
+            <p id="loadingText">
+                Processing plastic image
+            </p>
+
+
+            <div class="loading-steps">
+
+                <span class="loading-step active">
+                    Image
+                </span>
+
+                <span class="loading-step">
+                    Detection
+                </span>
+
+                <span class="loading-step">
+                    Analysis
+                </span>
+
+                <span class="loading-step">
+                    Decision
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CAMERA MODAL
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="cameraModal"
+        hidden
+    >
+
+        <div class="modal-card camera-modal-card">
+
+            <button
+                class="modal-close"
+                id="closeCameraBtn"
+                aria-label="Close"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-header">
+
+                <span class="section-kicker">
+                    COMPUTER VISION
+                </span>
+
+                <h3>
+                    Live Camera
+                </h3>
+
+                <p>
+                    Camera-based analysis will connect to
+                    the AI detection pipeline.
+                </p>
+
+            </div>
+
+
+            <div class="camera-preview">
+
+                <div class="camera-placeholder">
+
+                    <span>
+                        ◉
+                    </span>
+
+                    <strong>
+                        Camera Ready
+                    </strong>
+
+                    <small>
+                        Live detection module
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-btn full-width"
+                id="startCameraBtn"
+                type="button"
+            >
+                Start Camera
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        hidden
+    >
+
+        <span
+            class="toast-icon"
+            id="toastIcon"
+        >
+            ✓
+        </span>
+
+
+        <div>
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Operation completed.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

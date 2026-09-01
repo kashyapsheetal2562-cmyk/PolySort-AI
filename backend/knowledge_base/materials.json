@@ -1,0 +1,160 @@
+{
+  "PET": {
+    "name": "Polyethylene Terephthalate",
+    "short_name": "PET",
+    "recycling_code": 1,
+    "category": "Thermoplastic",
+    "recyclable": true,
+    "common_products": [
+      "Water bottles",
+      "Soft drink bottles",
+      "Juice bottles",
+      "Food containers",
+      "Plastic packaging"
+    ],
+    "properties": [
+      "Lightweight",
+      "Strong",
+      "Transparent",
+      "Good moisture barrier"
+    ],
+    "recycling_method": "Mechanical recycling",
+    "recommendation": "Highly recyclable. Collect separately and send to a PET recycling facility."
+  },
+
+  "HDPE": {
+    "name": "High-Density Polyethylene",
+    "short_name": "HDPE",
+    "recycling_code": 2,
+    "category": "Thermoplastic",
+    "recyclable": true,
+    "common_products": [
+      "Milk bottles",
+      "Detergent bottles",
+      "Shampoo bottles",
+      "Chemical containers",
+      "Plastic pipes"
+    ],
+    "properties": [
+      "High strength",
+      "Durable",
+      "Chemical resistant",
+      "Low moisture absorption"
+    ],
+    "recycling_method": "Mechanical recycling",
+    "recommendation": "Highly recyclable. Suitable for mechanical recycling and reuse."
+  },
+
+  "PVC": {
+    "name": "Polyvinyl Chloride",
+    "short_name": "PVC",
+    "recycling_code": 3,
+    "category": "Thermoplastic",
+    "recyclable": true,
+    "common_products": [
+      "Water pipes",
+      "Cable insulation",
+      "Flooring",
+      "Plastic sheets",
+      "Window frames"
+    ],
+    "properties": [
+      "Durable",
+      "Chemical resistant",
+      "Weather resistant",
+      "Good insulation properties"
+    ],
+    "recycling_method": "Specialized PVC recycling",
+    "recommendation": "Requires specialized recycling facilities. Avoid mixing PVC with other plastics."
+  },
+
+  "LDPE": {
+    "name": "Low-Density Polyethylene",
+    "short_name": "LDPE",
+    "recycling_code": 4,
+    "category": "Thermoplastic",
+    "recyclable": true,
+    "common_products": [
+      "Plastic bags",
+      "Packaging films",
+      "Food wrapping",
+      "Squeeze bottles",
+      "Plastic films"
+    ],
+    "properties": [
+      "Flexible",
+      "Lightweight",
+      "Moisture resistant",
+      "Low density"
+    ],
+    "recycling_method": "Film and plastic recycling",
+    "recommendation": "Collect separately because thin LDPE films can be difficult to process."
+  },
+
+  "PP": {
+    "name": "Polypropylene",
+    "short_name": "PP",
+    "recycling_code": 5,
+    "category": "Thermoplastic",
+    "recyclable": true,
+    "common_products": [
+      "Food containers",
+      "Bottle caps",
+      "Storage boxes",
+      "Automotive parts",
+      "Medical containers"
+    ],
+    "properties": [
+      "Lightweight",
+      "Heat resistant",
+      "Chemical resistant",
+      "Strong"
+    ],
+    "recycling_method": "Mechanical recycling",
+    "recommendation": "Recyclable and suitable for mechanical recycling."
+  },
+
+  "PS": {
+    "name": "Polystyrene",
+    "short_name": "PS",
+    "recycling_code": 6,
+    "category": "Thermoplastic",
+    "recyclable": false,
+    "common_products": [
+      "Disposable cups",
+      "Food trays",
+      "Foam packaging",
+      "Protective packaging",
+      "Disposable containers"
+    ],
+    "properties": [
+      "Lightweight",
+      "Rigid",
+      "Good insulation",
+      "Low cost"
+    ],
+    "recycling_method": "Specialized recycling",
+    "recommendation": "Difficult to recycle. Send to a specialized facility where available."
+  },
+
+  "OTHER": {
+    "name": "Other / Mixed Plastic",
+    "short_name": "OTHER",
+    "recycling_code": 7,
+    "category": "Mixed / Other",
+    "recyclable": false,
+    "common_products": [
+      "Multi-layer packaging",
+      "Mixed plastic products",
+      "Specialized plastic products",
+      "Unknown plastic materials"
+    ],
+    "properties": [
+      "Material composition varies",
+      "May contain multiple polymers",
+      "Recycling difficulty varies"
+    ],
+    "recycling_method": "Material-specific recycling",
+    "recommendation": "Further material analysis is recommended before recycling."
+  }
+}
