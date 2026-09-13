@@ -10,7 +10,7 @@ complete material information from the knowledge base.
 
 from typing import Dict
 
-from knowledge_base.knowledge import (
+from backend.knowledge_base.knowledge import (
     get_material,
     get_all_materials
 )
@@ -150,5 +150,4 @@ def get_supported_materials() -> Dict:
     """
     Return all materials supported by PolySort-AI.
     """
-
-    return get_all_materials()
+    return get_all_materials() 

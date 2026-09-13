@@ -1279,254 +1279,155 @@ document.addEventListener("DOMContentLoaded", () => {
        FULL ANALYSIS RESULT PAGE
     ============================================================ */
 
-    function showAnalysisResultPage(
-        material,
-        confidence,
-        decision,
-        info,
-        file
-    ) {
-        /*
-        Hide main dashboard application
-        */
+function showAnalysisResultPage(
+    material,
+    confidence,
+    decision,
+    info,
+    file
+) {
+    console.log("Opening final analysis result page...");
 
-        const app =
-            document.querySelector(
-                ".app"
-            );
+    const app = document.querySelector(".app");
 
-        if (app) {
-            app.style.display =
-                "none";
-        }
-
-        /*
-        Show result page
-        */
-
-        if (!analysisResultPage) {
-            console.warn(
-                "analysisResultPage element not found in index.html"
-            );
-
-            return;
-        }
-
-        analysisResultPage.hidden =
-            false;
-
-        analysisResultPage.style.display =
-            "block";
-
-        /*
-        Image
-        */
-
-        if (
-            finalResultImage &&
-            file
-        ) {
-            try {
-                const imageURL =
-                    URL.createObjectURL(
-                        file
-                    );
-
-                finalResultImage.src =
-                    imageURL;
-
-                finalResultImage.style.display =
-                    "block";
-
-                finalResultImage.onload =
-                    () => {
-                        URL.revokeObjectURL(
-                            imageURL
-                        );
-                    };
-
-            } catch (error) {
-                console.warn(
-                    "Unable to display final result image:",
-                    error
-                );
-            }
-        }
-
-        /*
-        Material
-        */
-
-        if (finalMaterial) {
-            finalMaterial.textContent =
-                material;
-        }
-
-        /*
-        Polymer subtitle
-        */
-
-        if (finalPolymer) {
-            finalPolymer.textContent =
-                info.polymer;
-        }
-
-        /*
-        Confidence
-        */
-
-        if (finalConfidence) {
-            finalConfidence.textContent =
-                `${confidence}%`;
-        }
-
-        if (finalConfidenceText) {
-            finalConfidenceText.textContent =
-                `${confidence}% Confidence`;
-        }
-
-        if (finalConfidenceFill) {
-            finalConfidenceFill.style.width =
-                `${confidence}%`;
-        }
-
-        /*
-        Decision
-        */
-
-        if (finalDecision) {
-            finalDecision.textContent =
-                decision;
-        }
-
-        if (finalDecisionText) {
-
-            if (
-                decision ===
-                "AUTO SORT"
-            ) {
-                finalDecisionText.textContent =
-                    "High confidence prediction. Sample can enter the automated sorting stream.";
-
-            } else if (
-                decision ===
-                "HUMAN REVIEW"
-            ) {
-                finalDecisionText.textContent =
-                    "Medium confidence prediction. Human verification is recommended.";
-
-            } else {
-                finalDecisionText.textContent =
-                    "Low confidence prediction. Manual inspection is required.";
-            }
-        }
-
-        /*
-        Material information
-        */
-
-        if (finalPolymerName) {
-            finalPolymerName.textContent =
-                info.polymer;
-        }
-
-        if (finalResinCode) {
-            finalResinCode.textContent =
-                info.resin;
-        }
-
-        if (finalPlasticFamily) {
-            finalPlasticFamily.textContent =
-                info.family;
-        }
-
-        if (finalRecycling) {
-            finalRecycling.textContent =
-                info.recycling;
-        }
-
-        /*
-        Apply decision styling
-        */
-
-        if (finalDecision) {
-
-            finalDecision.classList.remove(
-                "success",
-                "warning",
-                "danger"
-            );
-
-            if (
-                decision ===
-                "AUTO SORT"
-            ) {
-                finalDecision.classList.add(
-                    "success"
-                );
-
-            } else if (
-                decision ===
-                "HUMAN REVIEW"
-            ) {
-                finalDecision.classList.add(
-                    "warning"
-                );
-
-            } else {
-                finalDecision.classList.add(
-                    "danger"
-                );
-            }
-        }
-
-        /*
-        Confidence bar styling
-        */
-
-        if (finalConfidenceFill) {
-
-            finalConfidenceFill.classList.remove(
-                "success",
-                "warning",
-                "danger"
-            );
-
-            if (
-                confidence >=
-                CONFIDENCE_THRESHOLD
-            ) {
-                finalConfidenceFill.classList.add(
-                    "success"
-                );
-
-            } else if (
-                confidence >= 50
-            ) {
-                finalConfidenceFill.classList.add(
-                    "warning"
-                );
-
-            } else {
-                finalConfidenceFill.classList.add(
-                    "danger"
-                );
-            }
-        }
-
-        /*
-        Scroll to top
-        */
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        console.log(
-            "Full analysis result page opened."
-        );
+    // Hide main dashboard
+    if (app) {
+        app.style.setProperty("display", "none", "important");
     }
+
+    // Make result page visible
+    if (!analysisResultPage) {
+        console.error("analysisResultPage not found!");
+        return;
+    }
+
+    analysisResultPage.removeAttribute("hidden");
+
+    analysisResultPage.style.setProperty(
+        "display",
+        "block",
+        "important"
+    );
+
+    // Show uploaded image
+    if (finalResultImage && file) {
+        try {
+            const imageURL = URL.createObjectURL(file);
+
+            finalResultImage.src = imageURL;
+            finalResultImage.style.display = "block";
+
+            finalResultImage.onload = () => {
+                URL.revokeObjectURL(imageURL);
+            };
+        } catch (error) {
+            console.error(
+                "Unable to display result image:",
+                error
+            );
+        }
+    }
+
+    // Material
+    if (finalMaterial) {
+        finalMaterial.textContent = material;
+    }
+
+    // Polymer
+    if (finalPolymer) {
+        finalPolymer.textContent = info.polymer;
+    }
+
+    // Confidence
+    if (finalConfidence) {
+        finalConfidence.textContent = `${confidence}%`;
+    }
+
+    if (finalConfidenceText) {
+        finalConfidenceText.textContent =
+            `${confidence}% Confidence`;
+    }
+
+    if (finalConfidenceFill) {
+        finalConfidenceFill.style.width =
+            `${confidence}%`;
+    }
+
+    // Decision
+    if (finalDecision) {
+        finalDecision.textContent = decision;
+
+        finalDecision.classList.remove(
+            "success",
+            "warning",
+            "danger"
+        );
+
+        if (decision === "AUTO SORT") {
+            finalDecision.classList.add("success");
+        } else if (decision === "HUMAN REVIEW") {
+            finalDecision.classList.add("warning");
+        } else {
+            finalDecision.classList.add("danger");
+        }
+    }
+
+    if (finalDecisionText) {
+        if (decision === "AUTO SORT") {
+            finalDecisionText.textContent =
+                "High confidence prediction. Sample can enter the automated sorting stream.";
+        } else if (decision === "HUMAN REVIEW") {
+            finalDecisionText.textContent =
+                "Medium confidence prediction. Human verification is recommended.";
+        } else {
+            finalDecisionText.textContent =
+                "Low confidence prediction. Manual inspection is required.";
+        }
+    }
+
+    // Material details
+    if (finalPolymerName) {
+        finalPolymerName.textContent = info.polymer;
+    }
+
+    if (finalResinCode) {
+        finalResinCode.textContent = info.resin;
+    }
+
+    if (finalPlasticFamily) {
+        finalPlasticFamily.textContent = info.family;
+    }
+
+    if (finalRecycling) {
+        finalRecycling.textContent = info.recycling;
+    }
+
+    // Confidence color
+    if (finalConfidenceFill) {
+        finalConfidenceFill.classList.remove(
+            "success",
+            "warning",
+            "danger"
+        );
+
+        if (confidence >= CONFIDENCE_THRESHOLD) {
+            finalConfidenceFill.classList.add("success");
+        } else if (confidence >= 50) {
+            finalConfidenceFill.classList.add("warning");
+        } else {
+            finalConfidenceFill.classList.add("danger");
+        }
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    console.log(
+        "Full analysis result page opened successfully."
+    );
+}
 
     /* ============================================================
        RESULT PAGE BUTTONS

@@ -16,7 +16,7 @@ backend/uploads/*
 *.hdf5
 *.keras
 *.pth
-*.pt
+
 *.onnx
 
 .vscode/

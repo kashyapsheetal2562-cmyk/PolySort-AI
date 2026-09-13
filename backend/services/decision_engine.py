@@ -9,8 +9,7 @@ and generates a recycling decision.
 """
 
 from typing import Dict
-
-from services.classifier import classify_material
+from backend.services.classifier import classify_material
 
 
 # ============================================================

@@ -11,9 +11,8 @@ from pathlib import Path
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from services.detector import detect_plastic
-from services.decision_engine import analyze_material
-
+from backend.services.detector import detect_plastic
+from backend.services.decision_engine import analyze_material
 
 # ============================================================
 # APP CONFIGURATION
