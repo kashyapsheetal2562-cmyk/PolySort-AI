@@ -1,7 +1,7 @@
 """
 ============================================================
 PolySort-AI — Intelligent Plastic Sorting System
-FastAPI Backend
+FastAPI Backend + Frontend
 ============================================================
 """
 
@@ -10,9 +10,11 @@ from pathlib import Path
 
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from backend.services.detector import detect_plastic
 from backend.services.decision_engine import analyze_material
+
 
 # ============================================================
 # APP CONFIGURATION
@@ -47,20 +49,12 @@ BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
+FRONTEND_DIR = BASE_DIR.parent / "frontend"
+
 
 # ============================================================
-# BASIC ROUTES
+# HEALTH CHECK
 # ============================================================
-
-@app.get("/")
-def root():
-    return {
-        "success": True,
-        "project": "PolySort-AI",
-        "message": "PolySort-AI backend is running!",
-        "version": "1.0.0"
-    }
-
 
 @app.get("/health")
 def health_check():
@@ -220,11 +214,23 @@ async def analyze_image(
         "success": True,
         "project": "PolySort-AI",
         "filename": original_filename,
-
         "detection": detection_result,
-
         "analysis": decision
     }
+
+
+# ============================================================
+# FRONTEND
+# ============================================================
+
+app.mount(
+    "/",
+    StaticFiles(
+        directory=FRONTEND_DIR,
+        html=True
+    ),
+    name="frontend"
+)
 
 
 # ============================================================
@@ -236,7 +242,7 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-        "main:app",
+        "backend.main:app",
         host="127.0.0.1",
         port=8000,
         reload=True

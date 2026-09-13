@@ -13,7 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
        CONFIGURATION
     ============================================================ */
 
-    const BACKEND_URL = "http://127.0.0.1:8000";
+    const BACKEND_URL =
+    (window.location.hostname === "localhost" ||
+     window.location.hostname === "127.0.0.1")
+        ? "http://127.0.0.1:8000"
+        : window.location.origin;
     const API_URL = `${BACKEND_URL}/analyze`;
     const CONFIDENCE_THRESHOLD = 80;
 
